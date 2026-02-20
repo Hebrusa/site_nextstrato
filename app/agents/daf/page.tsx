@@ -197,9 +197,10 @@ export default function AgentDAFPage() {
                 </h2>
                 <ul className="space-y-2.5 mb-6">
                   {[
-                    "Extraction manuelle depuis SAP, Sage ou Pennylane",
-                    "Retraitement sous Excel + consolidation multi-entités",
-                    "Analyse des écarts & rédaction des commentaires COMEX",
+                    "Extraction manuelle depuis votre ERP Finance",
+                    "Retraitements lourds sous Excel",
+                    "Peu de temps pour analyser les chiffres",
+                    "Rédaction chronophage des présentations COMEX",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-base text-[#71718A]">
                       <ArrowIcon size={5} />

@@ -16,7 +16,7 @@ const agents = [
     id: "daf",
     icon: "💼",
     title: "Agent DAF",
-    tagline: "Clôturez plus vite. Pilotez en temps réel.",
+    tagline: "Clôturez plus vite. Analysez mieux. Décidez plus tôt.",
     color: "#4F6EF7",
     description: "L'Agent DAF automatise vos tâches financières récurrentes : préparation des clôtures, consolidation des reportings, analyse des écarts, réponses aux questions de gestion. Connecté à votre ERP et vos outils de reporting, il travaille avec vos données réelles.",
     useCases: [
