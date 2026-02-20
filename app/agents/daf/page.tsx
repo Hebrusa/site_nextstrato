@@ -291,14 +291,14 @@ export default function AgentDAFPage() {
                 ⚙️ Comment ça fonctionne ?
               </p>
               <h2 className="text-2xl lg:text-3xl font-bold text-[#0F0F18] mb-10">
-                3 étapes, de la donnée brute à l'analyse prête à présenter
+                4 étapes, de la donnée brute à l'analyse prête à présenter
               </h2>
             </FadeIn>
             <div className="space-y-6">
 
               {/* Étape 1 */}
               <FadeIn delay={0.05}>
-                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
+                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 lg:p-10 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
                   <div className="flex items-start gap-6">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base shrink-0"
@@ -307,11 +307,63 @@ export default function AgentDAFPage() {
                       1
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-[#0F0F18] text-xl mb-3">
+                      <h3 className="font-bold text-[#0F0F18] text-xl mb-4">
                         Connexion au SI Finance
                       </h3>
-                      <p className="text-[#71718A] text-base">
-                        SAP, Sage, Pennylane, Excel ou export CSV — aucun changement d'outil requis.
+                      <p className="text-[#71718A] text-base leading-relaxed mb-6">
+                        Deux modes possibles selon votre contexte :
+                      </p>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="rounded-xl border border-[#E4E4EF] p-5 bg-[#F8F8FC]">
+                          <p className="text-[#0F0F18] font-semibold text-base mb-3">
+                            Mode connecté{" "}
+                            <span
+                              className="text-xs px-2 py-0.5 rounded-full ml-1 font-medium"
+                              style={{ background: `${COLOR}12`, color: COLOR }}
+                            >
+                              Recommandé
+                            </span>
+                          </p>
+                          <ul className="space-y-2 text-sm text-[#71718A]">
+                            {[
+                              "SAP",
+                              "Sage",
+                              "Pennylane",
+                              "Fichiers Excel / Google Sheets",
+                              "Outils BI existants",
+                              "..."
+                            ].map((s) => (
+                              <li key={s} className="flex items-center gap-2">
+                                <span style={{ color: COLOR }}>›</span> {s}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-sm text-[#71718A] mt-4 pt-3 border-t border-[#E4E4EF]">
+                            Synchronisation automatique quotidienne ou mensuelle.
+                          </p>
+                        </div>
+                        <div className="rounded-xl border border-[#E4E4EF] p-5 bg-[#F8F8FC]">
+                          <p className="text-[#0F0F18] font-semibold text-base mb-3">
+                            Mode export{" "}
+                            <span className="text-sm text-[#71718A] font-normal">
+                              (déploiement rapide)
+                            </span>
+                          </p>
+                          <ul className="space-y-2.5 text-sm text-[#71718A]">
+                            <li className="flex items-start gap-2">
+                              <span style={{ color: COLOR }}>›</span> Export CSV ou Excel depuis votre SI Finance
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span style={{ color: COLOR }}>›</span> Dépôt sécurisé
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span style={{ color: COLOR }}>›</span> Traitement automatisé en quelques minutes
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <p className="text-base text-[#71718A] mt-5 font-medium">
+                        👉 Aucun changement d'outil requis.
                       </p>
                     </div>
                   </div>
@@ -359,7 +411,7 @@ export default function AgentDAFPage() {
 
               {/* Étape 3 */}
               <FadeIn delay={0.15}>
-                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
+                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 lg:p-10 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
                   <div className="flex items-start gap-6">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base shrink-0"
@@ -368,15 +420,18 @@ export default function AgentDAFPage() {
                       3
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-[#0F0F18] text-xl mb-3">
+                      <h3 className="font-bold text-[#0F0F18] text-xl mb-4">
                         Analyse des écarts intelligente
                       </h3>
-                      <ul className="grid sm:grid-cols-2 gap-3">
+                      <p className="text-[#71718A] text-base leading-relaxed mb-5">
+                        Pour chaque ligne significative :
+                      </p>
+                      <ul className="grid sm:grid-cols-2 gap-3 mb-6">
                         {[
-                          "Écart vs Budget & N-1",
+                          "Écart vs Budget",
+                          "Écart vs N-1",
                           "Écart en % et en valeur",
-                          "Identification des causes probables",
-                          "Commentaires prêts à copier",
+                          "Identification automatique des causes probables",
                         ].map((item) => (
                           <li
                             key={item}
@@ -387,6 +442,55 @@ export default function AgentDAFPage() {
                           </li>
                         ))}
                       </ul>
+                      <div
+                        className="rounded-xl p-5 border text-base italic text-[#71718A] leading-relaxed"
+                        style={{
+                          background: `${COLOR}06`,
+                          borderColor: `${COLOR}20`,
+                        }}
+                      >
+                        <span className="font-semibold not-italic text-[#0F0F18] block mb-2 text-xs uppercase tracking-wide">
+                          Exemple généré automatiquement
+                        </span>
+                        «La marge brute diminue de 4,2% vs budget, principalement liée à une
+                        hausse des coûts matières sur la BU Industrie (+8%).»
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* Étape 4 */}
+              <FadeIn delay={0.2}>
+                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 lg:p-10 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
+                  <div className="flex items-start gap-6">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base shrink-0"
+                      style={{ background: `${COLOR}12`, color: COLOR }}
+                    >
+                      4
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-[#0F0F18] text-xl mb-4">
+                        Interroge les données pour approfondir l'analyse
+                      </h3>
+                      <p className="text-[#71718A] text-base leading-relaxed mb-5">
+                        En langage naturel, posez vos questions directement à l'agent. Il génère instantanément un commentaire exécutif prêt pour le CODIR :
+                      </p>
+                      <div
+                        className="rounded-xl p-5 border text-sm text-[#71718A] leading-relaxed"
+                        style={{
+                          background: `${COLOR}06`,
+                          borderColor: `${COLOR}20`,
+                        }}
+                      >
+                        <span className="font-semibold not-italic text-[#0F0F18] block mb-3 text-xs uppercase tracking-wide">
+                          💬 Commentaire exécutif — Style COMEX
+                        </span>
+                        <p className="italic">
+                          Performance exceptionnelle du Groupe avec un CA YTD de €71,8M (+33% vs budget) porté par l'accélération des activités SaaS et Services. La marge brute consolidée atteint 76,7% contre 40,4% budgété, témoignant de l'efficacité de notre stratégie de montée en gamme. L'EBITDA de €58,3M confirme notre capacité de génération de cash opérationnel. Attention néanmoins à la dégradation de la trésorerie (€1,4M vs €4,2M en début d'année) et aux tensions clients avec €1,16M d'impayés. L'entité ES01 présente des pertes structurelles nécessitant un plan d'action immédiat.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
