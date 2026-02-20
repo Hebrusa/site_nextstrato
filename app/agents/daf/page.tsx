@@ -191,20 +191,15 @@ export default function AgentDAFPage() {
         <Section className="bg-[#F8F8FC]">
           <Container>
             <FadeIn>
-              <div className="bg-white rounded-2xl border border-[#E4E4EF] p-10">
-                <h2 className="text-2xl font-bold text-[#0F0F18] mb-2">
+              <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8">
+                <h2 className="text-2xl font-bold text-[#0F0F18] mb-5">
                   🎯 L'irritant que vivent tous les DAF
                 </h2>
-                <p className="text-[#71718A] text-base mb-6">
-                  Chaque mois, le même scénario :
-                </p>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
-                    "Extraction manuelle des données depuis SAP, Sage ou Pennylane",
-                    "Retraitement sous Excel",
-                    "Consolidation multi-entités",
-                    "Analyse des écarts budgétaires",
-                    "Rédaction de commentaires pour le COMEX",
+                    "Extraction manuelle depuis SAP, Sage ou Pennylane",
+                    "Retraitement sous Excel + consolidation multi-entités",
+                    "Analyse des écarts & rédaction des commentaires COMEX",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-base text-[#71718A]">
                       <ArrowIcon size={5} />
@@ -212,42 +207,8 @@ export default function AgentDAFPage() {
                     </li>
                   ))}
                 </ul>
-
-                <p className="text-[#0F0F18] font-semibold text-base mb-4">
-                  Résultat :
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  {[
-                    {
-                      icon: "⏳",
-                      text: "2 à 5 jours mobilisés uniquement pour «mettre en forme» l'information",
-                    },
-                    {
-                      icon: "⚠️",
-                      text: "Risque d'erreurs de manipulation",
-                    },
-                    {
-                      icon: "📉",
-                      text: "Analyses superficielles faute de temps",
-                    },
-                    {
-                      icon: "🔥",
-                      text: "Pression forte en période de clôture",
-                    },
-                  ].map(({ icon, text }) => (
-                    <div
-                      key={text}
-                      className="flex items-start gap-3 rounded-xl p-4 border border-[#E4E4EF] bg-[#F8F8FC] text-base text-[#71718A]"
-                    >
-                      <span className="text-xl shrink-0">{icon}</span>
-                      {text}
-                    </div>
-                  ))}
-                </div>
-
                 <div className="rounded-xl bg-[#FFF7ED] border border-[#FED7AA] px-5 py-4 text-base font-medium text-[#92400E]">
-                  👉 Le DAF passe plus de temps à produire le reporting qu'à
-                  l'analyser.
+                  👉 2 à 5 jours par mois passés à produire le reporting — pas à l'analyser.
                 </div>
               </div>
             </FadeIn>
@@ -337,7 +298,7 @@ export default function AgentDAFPage() {
 
               {/* Étape 1 */}
               <FadeIn delay={0.05}>
-                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 lg:p-10 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
+                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
                   <div className="flex items-start gap-6">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base shrink-0"
@@ -346,63 +307,11 @@ export default function AgentDAFPage() {
                       1
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-[#0F0F18] text-xl mb-4">
+                      <h3 className="font-bold text-[#0F0F18] text-xl mb-3">
                         Connexion au SI Finance
                       </h3>
-                      <p className="text-[#71718A] text-base leading-relaxed mb-6">
-                        Deux modes possibles selon votre contexte :
-                      </p>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div className="rounded-xl border border-[#E4E4EF] p-5 bg-[#F8F8FC]">
-                          <p className="text-[#0F0F18] font-semibold text-base mb-3">
-                            Mode connecté{" "}
-                            <span
-                              className="text-xs px-2 py-0.5 rounded-full ml-1 font-medium"
-                              style={{ background: `${COLOR}12`, color: COLOR }}
-                            >
-                              Recommandé
-                            </span>
-                          </p>
-                          <ul className="space-y-2 text-sm text-[#71718A]">
-                            {[
-                              "SAP",
-                              "Sage",
-                              "Pennylane",
-                              "Fichiers Excel / Google Sheets",
-                              "Outils BI existants",
-                              "..."
-                            ].map((s) => (
-                              <li key={s} className="flex items-center gap-2">
-                                <span style={{ color: COLOR }}>›</span> {s}
-                              </li>
-                            ))}
-                          </ul>
-                          <p className="text-sm text-[#71718A] mt-4 pt-3 border-t border-[#E4E4EF]">
-                            Synchronisation automatique quotidienne ou mensuelle.
-                          </p>
-                        </div>
-                        <div className="rounded-xl border border-[#E4E4EF] p-5 bg-[#F8F8FC]">
-                          <p className="text-[#0F0F18] font-semibold text-base mb-3">
-                            Mode export{" "}
-                            <span className="text-sm text-[#71718A] font-normal">
-                              (déploiement rapide)
-                            </span>
-                          </p>
-                          <ul className="space-y-2.5 text-sm text-[#71718A]">
-                            <li className="flex items-start gap-2">
-                              <span style={{ color: COLOR }}>›</span> Export CSV ou Excel depuis votre SI Finance
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <span style={{ color: COLOR }}>›</span> Dépôt sécurisé
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <span style={{ color: COLOR }}>›</span> Traitement automatisé en quelques minutes
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <p className="text-base text-[#71718A] mt-5 font-medium">
-                        👉 Aucun changement d'outil requis.
+                      <p className="text-[#71718A] text-base">
+                        SAP, Sage, Pennylane, Excel ou export CSV — aucun changement d'outil requis.
                       </p>
                     </div>
                   </div>
@@ -450,7 +359,7 @@ export default function AgentDAFPage() {
 
               {/* Étape 3 */}
               <FadeIn delay={0.15}>
-                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 lg:p-10 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
+                <div className="bg-white rounded-2xl border border-[#E4E4EF] p-8 hover:border-[rgba(79,110,247,0.25)] hover:shadow-md hover:shadow-black/[0.04] transition-all">
                   <div className="flex items-start gap-6">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base shrink-0"
@@ -459,18 +368,15 @@ export default function AgentDAFPage() {
                       3
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-[#0F0F18] text-xl mb-4">
+                      <h3 className="font-bold text-[#0F0F18] text-xl mb-3">
                         Analyse des écarts intelligente
                       </h3>
-                      <p className="text-[#71718A] text-base leading-relaxed mb-5">
-                        Pour chaque ligne significative :
-                      </p>
-                      <ul className="grid sm:grid-cols-2 gap-3 mb-6">
+                      <ul className="grid sm:grid-cols-2 gap-3">
                         {[
-                          "Écart vs Budget",
-                          "Écart vs N-1",
+                          "Écart vs Budget & N-1",
                           "Écart en % et en valeur",
-                          "Identification automatique des causes probables",
+                          "Identification des causes probables",
+                          "Commentaires prêts à copier",
                         ].map((item) => (
                           <li
                             key={item}
@@ -481,71 +387,10 @@ export default function AgentDAFPage() {
                           </li>
                         ))}
                       </ul>
-                      <div
-                        className="rounded-xl p-5 border text-base italic text-[#71718A] leading-relaxed"
-                        style={{
-                          background: `${COLOR}06`,
-                          borderColor: `${COLOR}20`,
-                        }}
-                      >
-                        <span className="font-semibold not-italic text-[#0F0F18] block mb-2 text-xs uppercase tracking-wide">
-                          Exemple généré automatiquement
-                        </span>
-                        «La marge brute diminue de 4,2% vs budget, principalement liée à une
-                        hausse des coûts matières sur la BU Industrie (+8%).»
-                      </div>
                     </div>
                   </div>
                 </div>
               </FadeIn>
-            </div>
-          </Container>
-        </Section>
-
-        {/* ── Dashboard ── */}
-        <Section className="bg-[#F8F8FC] border-t border-[#E4E4EF]">
-          <Container>
-            <FadeIn>
-              <p className="text-[#4F6EF7] text-sm font-semibold uppercase tracking-widest mb-2">
-                📊 Le Tableau de Bord Financier
-              </p>
-              <h2 className="text-2xl lg:text-3xl font-bold text-[#0F0F18] mb-3">
-                Un dashboard temps réel en 4 blocs
-              </h2>
-              <p className="text-[#71718A] text-base leading-relaxed mb-10 max-w-2xl">
-                Toutes vos données financières consolidées, disponibles en
-                permanence, sans aucune manipulation manuelle.
-              </p>
-            </FadeIn>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {dashboardBlocks.map((block, i) => (
-                <FadeIn key={block.number} delay={i * 0.07}>
-                  <div className="bg-white rounded-2xl border border-[#E4E4EF] p-7 h-full hover:border-[rgba(79,110,247,0.25)] hover:shadow-sm transition-all">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div
-                        className="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm shrink-0"
-                        style={{ background: `${COLOR}12`, color: COLOR }}
-                      >
-                        {block.number}
-                      </div>
-                      <p className="font-bold text-[#0F0F18] text-lg">
-                        {block.title}
-                      </p>
-                    </div>
-                    <ul className="space-y-3">
-                      {block.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-3 text-base text-[#71718A]"
-                        >
-                          <ArrowIcon size={4} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </FadeIn>
-              ))}
             </div>
           </Container>
         </Section>
